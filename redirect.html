@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+</head>
+<body>
+    <script>
+        // Log the click using a webhook
+        function logClick() {
+            var url = window.location.href;
+            var webhookUrl = 'https://discord.com/api/webhooks/1218947479999877151/nloZbM1-6HP8SZkD1illqnEl_vvPUOA2FHXH0hPy9YzJJ-Qec0SSO9MYXeBye7InhQW3';
+            var payload = {
+                content: 'Someone clicked the link: ' + url
+            };
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Successfully logged click.');
+                } else {
+                    console.error('Failed to log click. Status code:', response.status);
+                }
+            })
+            .catch(error => {
+                console.error('Error logging click:', error);
+            });
+        }
+
+        // Log the click when the page loads
+        logClick();
+
+        // Redirect the user to the intended URL
+        window.location.href = 'https://example.com';  // Replace with the actual URL
+    </script>
+</body>
+</html>
