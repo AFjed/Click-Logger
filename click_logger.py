@@ -1,7 +1,7 @@
 import requests
 
 def log_click(user_id):
-    webhook_url = 'https://discord.com/api/webhooks/your_webhook_url_here'
+    webhook_url = 'https://discord.com/api/webhooks/1218947479999877151/nloZbM1-6HP8SZkD1illqnEl_vvPUOA2FHXH0hPy9YzJJ-Qec0SSO9MYXeBye7InhQW3'
     payload = {'content': f'User {user_id} clicked the link.'}
     response = requests.post(webhook_url, json=payload)
     if response.status_code == 200:
