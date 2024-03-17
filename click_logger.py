@@ -10,7 +10,7 @@ def log_click(url, user_id):
         print(f'Failed to log click. Status code: {response.status_code}')
 
 if __name__ == "__main__":
-    url = input("Enter the URL you want to track:https://example.com ")
+    url = input("https://example.com ")
     user_id = input("Enter user ID: ")
     log_click(url, user_id)
 
